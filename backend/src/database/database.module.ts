@@ -1,7 +1,7 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { FilmsMongoDbRepository } from '../repository/filmsMongo.repository';
-import { FilmsPostgreSQLRepository } from 'src/repository/filmsPostgreSQL.repository';
+import { FilmsPostgreSQLRepository } from '../repository/filmsPostgreSQL.repository';
 import { applicationConfig } from '../app.config.provider';
 import { Film, FilmSchema } from '../films/schema/films.schema';
 import { TypeOrmModule } from '@nestjs/typeorm';
