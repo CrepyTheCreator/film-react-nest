@@ -9,7 +9,7 @@ import { FilmEntity } from './film.entity';
 
 @Entity('schedules')
 export class ScheduleEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
@@ -27,7 +27,7 @@ export class ScheduleEntity {
   @Column()
   price: number;
 
-  @Column('text', { array: true })
+  @Column('text')
   taken: string;
 
   @ManyToOne(() => FilmEntity, (film) => film.schedule)
