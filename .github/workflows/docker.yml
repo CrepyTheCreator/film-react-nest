@@ -6,6 +6,10 @@ env:
 
 on: [push]
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
     build-and-publish-latest:
             runs-on: ubuntu-latest
