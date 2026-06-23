@@ -14,6 +14,10 @@ export class DatabaseModule {
     const providers = [];
     const imports = [];
 
+    console.log('DATABASE_URL=', process.env.DATABASE_URL);
+    console.log('DATABASE_USERNAME=', process.env.DATABASE_USERNAME);
+    console.log('DATABASE_PASSWORD=', process.env.DATABASE_PASSWORD);
+
     switch (dbms) {
       case 'mongodb':
         imports.push(MongooseModule.forRoot(applicationConfig.DATABASE_URL));
