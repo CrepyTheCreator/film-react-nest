@@ -14,6 +14,10 @@ export class DatabaseModule {
     const providers = [];
     const imports = [];
 
+    console.log('DATABASE_URL=', process.env.DATABASE_URL);
+    console.log('DATABASE_USERNAME=', process.env.DATABASE_USERNAME);
+    console.log('DATABASE_PASSWORD=', process.env.DATABASE_PASSWORD);
+
     switch (dbms) {
       case 'mongodb':
         imports.push(MongooseModule.forRoot(applicationConfig.DATABASE_URL));
@@ -31,9 +35,11 @@ export class DatabaseModule {
         imports.push(
           TypeOrmModule.forRoot({
             type: 'postgres',
-            url: applicationConfig.DATABASE_URL,
-            username: applicationConfig.DATABASE_USERNAME,
-            password: applicationConfig.DATABASE_PASSWORD,
+            host: 'postgres',
+            port: 5432,
+            username: 'prac',
+            password: 'prac',
+            database: 'prac',
             entities: [FilmEntity, ScheduleEntity],
             synchronize: false,
           }),

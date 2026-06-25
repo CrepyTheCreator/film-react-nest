@@ -1,5 +1,7 @@
 # FILM!
 
+Ссылка на рабочий сайт: http://crepy.nomorepartiessite.ru/
+
 ## Установка
 
 ### MongoDB
